@@ -35,6 +35,13 @@ namespace FastVideoSpliter
             this.Path_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Notice = new System.Windows.Forms.Label();
+            this.Save_tbx = new System.Windows.Forms.TextBox();
+            this.Save_btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Duration = new System.Windows.Forms.Label();
+            this.dot = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Path_tbx
@@ -44,13 +51,12 @@ namespace FastVideoSpliter
             this.Path_tbx.ReadOnly = true;
             this.Path_tbx.Size = new System.Drawing.Size(506, 23);
             this.Path_tbx.TabIndex = 0;
-            this.Path_tbx.Click += new System.EventHandler(this.Path_tbx_Click);
             // 
             // Run_btn
             // 
-            this.Run_btn.Location = new System.Drawing.Point(713, 130);
+            this.Run_btn.Location = new System.Drawing.Point(671, 32);
             this.Run_btn.Name = "Run_btn";
-            this.Run_btn.Size = new System.Drawing.Size(75, 23);
+            this.Run_btn.Size = new System.Drawing.Size(104, 91);
             this.Run_btn.TabIndex = 1;
             this.Run_btn.Text = "button1";
             this.Run_btn.UseVisualStyleBackColor = true;
@@ -58,7 +64,7 @@ namespace FastVideoSpliter
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(78, 176);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 218);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(376, 220);
             this.richTextBox1.TabIndex = 2;
@@ -94,16 +100,91 @@ namespace FastVideoSpliter
             this.Notice.TabIndex = 3;
             this.Notice.Text = "인터넷 연결 확인중...";
             // 
+            // Save_tbx
+            // 
+            this.Save_tbx.Location = new System.Drawing.Point(78, 60);
+            this.Save_tbx.Name = "Save_tbx";
+            this.Save_tbx.ReadOnly = true;
+            this.Save_tbx.Size = new System.Drawing.Size(506, 23);
+            this.Save_tbx.TabIndex = 0;
+            // 
+            // Save_btn
+            // 
+            this.Save_btn.Location = new System.Drawing.Point(590, 60);
+            this.Save_btn.Name = "Save_btn";
+            this.Save_btn.Size = new System.Drawing.Size(75, 23);
+            this.Save_btn.TabIndex = 1;
+            this.Save_btn.Text = "찾아보기";
+            this.Save_btn.UseVisualStyleBackColor = true;
+            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "저장폴더";
+            // 
+            // Duration
+            // 
+            this.Duration.AutoSize = true;
+            this.Duration.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Duration.Location = new System.Drawing.Point(197, 90);
+            this.Duration.Name = "Duration";
+            this.Duration.Size = new System.Drawing.Size(37, 19);
+            this.Duration.TabIndex = 3;
+            this.Duration.Text = "길이";
+            // 
+            // dot
+            // 
+            this.dot.AutoSize = true;
+            this.dot.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dot.Location = new System.Drawing.Point(69, 90);
+            this.dot.Name = "dot";
+            this.dot.Size = new System.Drawing.Size(51, 19);
+            this.dot.TabIndex = 4;
+            this.dot.Text = "확장자";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "확장자";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(126, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "영상길이";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dot);
             this.Controls.Add(this.Notice);
+            this.Controls.Add(this.Duration);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Save_btn);
             this.Controls.Add(this.Path_btn);
             this.Controls.Add(this.Run_btn);
+            this.Controls.Add(this.Save_tbx);
             this.Controls.Add(this.Path_tbx);
             this.Name = "Main";
             this.Text = "Form1";
@@ -120,6 +201,13 @@ namespace FastVideoSpliter
         private System.Windows.Forms.Button Path_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Notice;
+        private System.Windows.Forms.TextBox Save_tbx;
+        private System.Windows.Forms.Button Save_btn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Duration;
+        private System.Windows.Forms.Label dot;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

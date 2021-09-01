@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Xabe.FFmpeg;
+using FFmpeg.NET;
+using FFmpeg.NET.Events;
+using System.IO;
 
 namespace FastVideoSpliter
 {
@@ -51,22 +54,35 @@ namespace FastVideoSpliter
             Notice.Text = $"현재 버전은 v.{ver}입니다.";
         }
 
+        public static Engine ffmpeg = new Engine(@"C:\ffmpeg\bin\ffmpeg.exe");
+        public static string path;
+
         private void Run_btn_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = FFmpeg.GetMediaInfo(Path_tbx.Text).ToString();
-        }
-
-        private void Path_tbx_Click(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void Path_btn_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
             file.Title = "동영상을 선택해주세요!";
-            DialogResult result = file.ShowDialog();
-            if(result==DialogResult.OK)Path_tbx.Text = file.FileName;
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                path = file.FileName;
+                Path_tbx.Text = path;
+                dot.Text = Path.GetExtension(path);
+                var status = ffmpeg.GetMetaDataAsync(new InputFile(path));
+                Duration.Text = status.Result.Duration.ToString();
+
+            }
+        }
+
+        private void Save_btn_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog save = new CommonOpenFileDialog();
+            save.IsFolderPicker = true; //폴더 지정
+            save.Title = "자른 동영상을 저장할 폴더";
+            if (save.ShowDialog() == CommonFileDialogResult.Ok) Save_tbx.Text = save.FileName; //폴더가 정상적으로 선택됐으면 지정
         }
     }
 }
