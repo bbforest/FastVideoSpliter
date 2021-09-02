@@ -42,6 +42,10 @@ namespace FastVideoSpliter
             this.dot = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ms = new System.Windows.Forms.TextBox();
+            this.ss = new System.Windows.Forms.TextBox();
+            this.mt = new System.Windows.Forms.TextBox();
+            this.st = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Path_tbx
@@ -168,11 +172,43 @@ namespace FastVideoSpliter
             this.label4.TabIndex = 3;
             this.label4.Text = "영상길이";
             // 
+            // ms
+            // 
+            this.ms.Location = new System.Drawing.Point(12, 113);
+            this.ms.Name = "ms";
+            this.ms.Size = new System.Drawing.Size(36, 23);
+            this.ms.TabIndex = 5;
+            // 
+            // ss
+            // 
+            this.ss.Location = new System.Drawing.Point(54, 113);
+            this.ss.Name = "ss";
+            this.ss.Size = new System.Drawing.Size(36, 23);
+            this.ss.TabIndex = 5;
+            // 
+            // mt
+            // 
+            this.mt.Location = new System.Drawing.Point(116, 113);
+            this.mt.Name = "mt";
+            this.mt.Size = new System.Drawing.Size(36, 23);
+            this.mt.TabIndex = 5;
+            // 
+            // st
+            // 
+            this.st.Location = new System.Drawing.Point(158, 113);
+            this.st.Name = "st";
+            this.st.Size = new System.Drawing.Size(36, 23);
+            this.st.TabIndex = 5;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.st);
+            this.Controls.Add(this.mt);
+            this.Controls.Add(this.ss);
+            this.Controls.Add(this.ms);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.Notice);
             this.Controls.Add(this.Duration);
@@ -208,6 +244,10 @@ namespace FastVideoSpliter
         private System.Windows.Forms.Label dot;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox ms;
+        private System.Windows.Forms.TextBox ss;
+        private System.Windows.Forms.TextBox mt;
+        private System.Windows.Forms.TextBox st;
     }
 }
 

@@ -1,17 +1,9 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FFmpeg.NET;
-using FFmpeg.NET.Events;
 using System.IO;
 
 namespace FastVideoSpliter
@@ -59,7 +51,7 @@ namespace FastVideoSpliter
 
         private void Run_btn_Click(object sender, EventArgs e)
         {
-            
+            string option = $"-ss {ms.Text}:{ss.Text} -to {mt.Text}:{st.Text} -i {path} -c copy ";
         }
 
         private void Path_btn_Click(object sender, EventArgs e)
