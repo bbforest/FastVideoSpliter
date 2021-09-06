@@ -12,6 +12,7 @@
 *.ico
 *.msi
 *.exe
+publish/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
