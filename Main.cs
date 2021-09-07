@@ -79,7 +79,9 @@ namespace FastVideoSpliter
             int tar = 0; //분활 시작점
             for (int i = 0; dur_sum > tar; i++) //분활 시작점이 총 길이보다 커질때까지
             {
-                Process.Start(exe, $"-y -ss {tar}:0 -to {tar + target}:0 -i \"{file_path}\" -c copy -map 0 \"{Save_tbx.Text}\\{Save_name.Text} - {i}{dot.Text}\"");
+                int start = Convert.ToInt32(tar) * 60,
+                    end = start + Convert.ToInt32(target);
+                Process.Start(exe, $"-y -ss {start} -to {end} -i \"{file_path}\" -c copy -map 0 \"{Save_tbx.Text}\\{Save_name.Text} - {i}{dot.Text}\"");
                 List($"{tar}분 부터 {tar + target}분 까지 분활하여 저장 : {Save_name.Text} - {i}{dot.Text}");
                 tar += target; //분활 길이만큼 분활 시작점 증가
             }
@@ -87,7 +89,9 @@ namespace FastVideoSpliter
 
         private void Run_Custom()
         {
-            Process.Start(exe, $"-y -ss {ms.Text}:{ss.Text} -to {mt.Text}:{st.Text} -i \"{file_path}\" -c copy -map 0 \"{Save_tbx.Text}\\{Save_name.Text}{dot.Text}\"");
+            int start = Convert.ToInt32(ms.Text) * 60 + Convert.ToInt32(ss.Text),
+                end = Convert.ToInt32(mt.Text) * 60 + Convert.ToInt32(st.Text);
+            Process.Start(exe, $"-y -ss {start} -to {end} -i \"{file_path}\" -c copy -map 0 \"{Save_tbx.Text}\\{Save_name.Text}{dot.Text}\"");
             List($"{ms.Text}:{ss.Text}부터 {mt.Text}:{st.Text}까지 저장 : {Save_name.Text}{dot.Text}");
         }
 

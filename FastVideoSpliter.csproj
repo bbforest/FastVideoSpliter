@@ -8,6 +8,7 @@
     <Company>신광현</Company>
     <Authors>신광현</Authors>
     <ApplicationIcon>ico.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
