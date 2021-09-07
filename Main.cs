@@ -36,8 +36,8 @@ namespace FastVideoSpliter
                 DialogResult result = MessageBox.Show("업데이트가 있습니다! 업데이트 할까요?", "Fast Video Spliter", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
-                    wc.DownloadFile("http://pgm.bbforest.net/fvs.msi", Environment.GetEnvironmentVariable("temp") + "\\fvs.msi");
-                    Process.Start(Environment.GetEnvironmentVariable("temp") + "\\fvs.msi");
+                    wc.DownloadFile("http://pgm.bbforest.net/fvs/fvs.msi", Environment.GetEnvironmentVariable("temp") + "\\fvs.msi");
+                    Process.Start(new ProcessStartInfo { FileName = Environment.GetEnvironmentVariable("temp") + "\\fvs.msi", UseShellExecute = true });
                     Environment.Exit(0);
                 }
                 Notice.Text = "업데이트가 있습니다!";
