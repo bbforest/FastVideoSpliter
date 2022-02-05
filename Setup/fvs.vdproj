@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B0F6F8A38EB04FD8AAE1C4BCCEA32AB9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B42CFEF7DFB541BBBD0CB631D9B3827D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -76,12 +82,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E8A6069AC66140178AE67CC7FF853FFF"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_ED4575C43A984DAAA555E94DC45C6A9F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -323,6 +323,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B0F6F8A38EB04FD8AAE1C4BCCEA32AB9"
+            {
+            "SourcePath" = "8:..\\FastVideoSpliter\\publish\\x64.exe"
+            "TargetName" = "8:x64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_C0575F718C044FE79087ADC12545D3BC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B42CFEF7DFB541BBBD0CB631D9B3827D"
             {
             "SourcePath" = "8:..\\FastVideoSpliter\\publish\\D3DCompiler_47_cor3.dll"
@@ -387,26 +407,6 @@
             {
             "SourcePath" = "8:..\\FastVideoSpliter\\publish\\PresentationNative_cor3.dll"
             "TargetName" = "8:PresentationNative_cor3.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_C0575F718C044FE79087ADC12545D3BC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED4575C43A984DAAA555E94DC45C6A9F"
-            {
-            "SourcePath" = "8:..\\FastVideoSpliter\\publish\\x64.exe"
-            "TargetName" = "8:x64.exe"
             "Tag" = "8:"
             "Folder" = "8:_C0575F718C044FE79087ADC12545D3BC"
             "Condition" = "8:"
@@ -499,8 +499,8 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Fast Video Spliter"
-        "ProductCode" = "8:{EFDC95EB-BAE6-4BF4-8DA2-C8178CF8436C}"
-        "PackageCode" = "8:{8E00B07D-AA39-4221-B649-C7D8B01D7403}"
+        "ProductCode" = "8:{A12FA285-1431-4236-B0C4-14DC3EFA3E15}"
+        "PackageCode" = "8:{4E6171BC-0876-4ACF-BC06-C4EDE304639D}"
         "UpgradeCode" = "8:{403EABF7-2242-4B56-B7A1-14B7F8F4E379}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -626,12 +626,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_F6F70A6CA4A5415C987C54D869644F22"
             "Folder" = "8:_2C61ACD91C1F4451B741BB3B84AEBB80"
             "WorkingFolder" = "8:_C0575F718C044FE79087ADC12545D3BC"
-            "Icon" = "8:"
+            "Icon" = "8:_F6F70A6CA4A5415C987C54D869644F22"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FB92DD112BCF4C8CA63353B84AA765F2"
@@ -640,12 +640,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_F6F70A6CA4A5415C987C54D869644F22"
             "Folder" = "8:_9D5C8AFB3A134A0DA558D7B45A6AFF94"
             "WorkingFolder" = "8:_C0575F718C044FE79087ADC12545D3BC"
-            "Icon" = "8:"
+            "Icon" = "8:_F6F70A6CA4A5415C987C54D869644F22"
             "Feature" = "8:"
             }
         }

@@ -8,7 +8,7 @@
     <Company>신광현</Company>
     <Authors>신광현</Authors>
     <ApplicationIcon>ico.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <StartupObject></StartupObject>
     <SignAssembly>False</SignAssembly>
