@@ -15,7 +15,7 @@ namespace FastVideoSpliter
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-
+            
             //중복실행방지
             Process[] processes = null;
             string CurrentProcess = Process.GetCurrentProcess().ProcessName.ToUpper();
@@ -26,27 +26,36 @@ namespace FastVideoSpliter
                 Environment.Exit(0);
             }
 
-            //업데이트 확인
-            WebClient wc = new WebClient();
-            string new_ver = wc.DownloadString("http://pgm.bbforest.net/fvs/ver.txt");
             string ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            ver = ver.Substring(0, ver.Length - 2);
 
-            if (ver != new_ver)
+            try
             {
-                DialogResult result = MessageBox.Show("업데이트가 있습니다! 업데이트 할까요?", "Fast Video Spliter", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
+                //업데이트 확인
+                WebClient wc = new WebClient();
+                string new_ver = wc.DownloadString("https://raw.githubusercontent.com/skyeon15/FastVideoSpliter/master/ver.txt");
+                
+                if (ver != new_ver)
                 {
-                    wc.DownloadFile("http://pgm.bbforest.net/fvs/fvs.msi", Environment.GetEnvironmentVariable("temp") + "\\fvs.msi");
-                    Process.Start(new ProcessStartInfo { FileName = Environment.GetEnvironmentVariable("temp") + "\\fvs.msi", UseShellExecute = true });
-                    Environment.Exit(0);
+                    DialogResult result = MessageBox.Show("업데이트가 있습니다! 업데이트 할까요?", "Fast Video Spliter", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        wc.DownloadFile($"https://github.com/skyeon15/FastVideoSpliter/releases/download/v.{new_ver}/fvs.msi", Environment.GetEnvironmentVariable("temp") + "\\fvs.msi");
+                        Process.Start(new ProcessStartInfo { FileName = Environment.GetEnvironmentVariable("temp") + "\\fvs.msi", UseShellExecute = true });
+                        Environment.Exit(0);
+                    }
+                    Notice.Text = $"업데이트가 있습니다! 현재 버전 : {ver} 최신 버전 {new_ver}";
                 }
-                Notice.Text = "업데이트가 있습니다!";
+
+                Notice.Text = $"현재 버전은 v.{ver}입니다.";
+
+                if (Environment.Is64BitOperatingSystem) exe = Application.StartupPath + "x64.exe";
+                else exe = Application.StartupPath + "x86.exe";
             }
-
-            Notice.Text = $"현재 버전은 v.{ver}입니다.";
-
-            if (Environment.Is64BitOperatingSystem) exe = Application.StartupPath + "x64.exe";
-            else exe = Application.StartupPath + "x86.exe";
+            catch (Exception)
+            {
+                Notice.Text = $"현재 버전은 v.{ver}입니다. 업데이트 확인 실패!";
+            }
         }
 
         public static string file_path, exe;

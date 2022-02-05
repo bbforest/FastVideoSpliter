@@ -8,13 +8,20 @@
     <Company>신광현</Company>
     <Authors>신광현</Authors>
     <ApplicationIcon>ico.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <StartupObject></StartupObject>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ico.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WindowsAPICodePack-Core" Version="1.1.2" />
